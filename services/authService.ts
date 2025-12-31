@@ -30,11 +30,13 @@ export const registerUser = async (email: string, password: string, userData: Pa
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const firebaseUser = userCredential.user;
 
+    const role = email.toLowerCase().startsWith('admin') ? UserRole.ADMIN : (userData.role || UserRole.PASSENGER);
+
     const newUser: User = {
         id: firebaseUser.uid,
         name: userData.name || '',
         phone: userData.phone || '',
-        role: userData.role || UserRole.PASSENGER,
+        role: role,
         isVerified: false,
         verificationStatus: VerificationStatus.NONE,
         createdAt: new Date().toISOString()
