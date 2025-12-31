@@ -1,0 +1,8 @@
+{
+  "name": "Rafiq - Trans-Border Ride & Parcel Sharing",
+  "description": "A comprehensive transport platform connecting Saudi Arabia and Yemen for ride-sharing and parcel delivery, featuring driver verification, trip management, and shipment bidding.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
